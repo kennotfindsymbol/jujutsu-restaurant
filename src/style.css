@@ -55,7 +55,9 @@ header a {
     text-decoration: none;
 }
 
-
+img {
+    width: 100%;  
+}
 
 nav {
     /* margin-right: 20px; */
@@ -122,12 +124,14 @@ nav button:hover{
 }
 
 .card .food-name {
+    
     font-size: 2rem;
     color: var(--logo-color);
     text-shadow: var(--curse-text-shadow);
 }
 
 .card .food-price {
+    margin-top: auto;
     font-size: 1.5rem;
 }
 
@@ -137,12 +141,14 @@ nav button:hover{
 
 .img-container {
     background-color: #ffffff;
-    /* height: 50%; */
+    height: 350px;
     width: 100%;
-    margin: auto 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
 }
 
-img {
+.img-container img {
    width: 100%; 
    
 }

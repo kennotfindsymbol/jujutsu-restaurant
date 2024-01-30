@@ -31,7 +31,13 @@ function createLatest(){
   const intro = document.createElement('div');
   intro.classList.add('intro')
   intro.textContent = 'The HOTTEST (literally) cafe in Shinjuku !!!'
+  const p = document.createElement('p');
+  p.textContent = 
+  `Welcome to the world of Jujustu Kaisen, where mystical powers and ancient curses collide! Step into our Jujustu Kaisen themed cafe and immerse yourself in the thrilling universe created by Gege Akutami. Inspired by the popular manga and anime series, our cafe is a haven for fans and enthusiasts alike.
+
+  As you enter, you'll immediately be transported to the vibrant streets of Tokyo and the hidden world of sorcery. Our cafe is meticulously designed to capture the essence of Jujustu Kaisen, with walls adorned with breathtaking artwork, character cutouts, and memorabilia that will make your heart skip a beat.`
   card2.append(intro);
+  card2.append(p);
   cardsDiv.append(card2);
 
   latestDiv.append(cardsDiv);
@@ -57,10 +63,13 @@ function createMenu(){
   imgContainer1.append(myImage1);
   const foodName1 = document.createElement('p');
   foodName1.classList.add('food-name');
-  foodName1.textContent = 'Sukuna\'s finger 1';
+  foodName1.textContent = 'Sukuna\'s finger';
   const foodDescription1 = document.createElement('p');
   foodDescription1.classList.add('food-description');
-  foodDescription1.textContent = `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas aspernatur et hic aliquid fuga obcaecati laudantium vero consequuntur odio. Doloribus pariatur assumenda inventore maiores iste mollitia iusto, vitae minima expedita?`;
+  foodDescription1.textContent = 
+  `Over a thousand years ago, Sukuna accepted Kenjaku's offer to participate in the Culling Game.
+   As part of the contract, Kenjaku divided Sukuna's soul into his twenty fingers and turned them into cursed objects, 
+   allowing Sukuna to live on after his death.`;
   const foodPrice1 = document.createElement('p');
   foodPrice1.classList.add('food-price');
   foodPrice1.textContent = '$15';
@@ -70,6 +79,30 @@ function createMenu(){
   card1.append(foodPrice1);
   cardsDiv.append(card1);
 
+  const card4 = document.createElement('div');
+  card4.classList.add('card');
+  const imgContainer4 = document.createElement('div');
+  imgContainer4.classList.add('img-container')
+  const myImage4 = new Image();
+  myImage4.src = food4;
+  imgContainer4.append(myImage4);
+  const foodName4 = document.createElement('p');
+  foodName4.classList.add('food-name');
+  foodName4.textContent = 'Sukuna\'s finger x 15';
+  const foodDescription4 = document.createElement('p');
+  foodDescription4.classList.add('food-description');
+  foodDescription4.textContent = 
+  `Jogo found Yuji and didn't hesitate to feed him every finger in his possession.
+   Once Sukuna gained control of the vessel, Jogo recognized his presence was even worse than Satoru's because it was overwhelmingly evil.
+   `;
+  const foodPrice4 = document.createElement('p');
+  foodPrice4.classList.add('food-price');
+  foodPrice4.textContent = '$200';
+  card4.append(imgContainer4);
+  card4.append(foodName4);
+  card4.append(foodDescription4);
+  card4.append(foodPrice4);
+  cardsDiv.append(card4);
 
 
   const card2 = document.createElement('div');
@@ -84,7 +117,7 @@ function createMenu(){
   foodName2.textContent = 'Cursed Spirit';
   const foodDescription2 = document.createElement('p');
   foodDescription2.classList.add('food-description');
-  foodDescription2.textContent = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora culpa esse placeat, magnam illum ducimus rem voluptatum incidunt maxime, sint voluptatem natus. Minima rem delectus voluptas totam optio nemo. Ea?`;
+  foodDescription2.textContent = `A taste of a cursed spirit that nobody else knows...like swallowing whole a cloth that was used to wipe up vomit`;
   const foodPrice2 = document.createElement('p');
   foodPrice2.classList.add('food-price');
   foodPrice2.textContent = '$10';
@@ -106,7 +139,9 @@ function createMenu(){
   foodName3.textContent = 'Nanami\'s bun';
   const foodDescription3 = document.createElement('p');
   foodDescription3.classList.add('food-description');
-  foodDescription3.textContent = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque modi inventore porro, veritatis quasi quam maiores in? Cumque iure, totam veritatis doloribus atque sed eum nam voluptas ipsum dolores dicta.`;
+  foodDescription3.textContent = 
+  `Nanami would visit the bakery for his favorite bread where he was friendly with the young lady behind the counter.
+   He notices a small curse on her shoulders and decided it was harmless enough and not worth risking exposing himself.`;
   const foodPrice3 = document.createElement('p');
   foodPrice3.classList.add('food-price');
   foodPrice3.textContent = '$5';
@@ -116,27 +151,7 @@ function createMenu(){
   card3.append(foodPrice3);
   cardsDiv.append(card3);
 
-  const card4 = document.createElement('div');
-  card4.classList.add('card');
-  const imgContainer4 = document.createElement('div');
-  imgContainer4.classList.add('img-container')
-  const myImage4 = new Image();
-  myImage4.src = food4;
-  imgContainer4.append(myImage4);
-  const foodName4 = document.createElement('p');
-  foodName4.classList.add('food-name');
-  foodName4.textContent = 'Sukuna\'s finger 2';
-  const foodDescription4 = document.createElement('p');
-  foodDescription4.classList.add('food-description');
-  foodDescription4.textContent = `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas aspernatur et hic aliquid fuga obcaecati laudantium vero consequuntur odio. Doloribus pariatur assumenda inventore maiores iste mollitia iusto, vitae minima expedita?`;
-  const foodPrice4 = document.createElement('p');
-  foodPrice4.classList.add('food-price');
-  foodPrice4.textContent = '$15';
-  card4.append(imgContainer4);
-  card4.append(foodName4);
-  card4.append(foodDescription4);
-  card4.append(foodPrice4);
-  cardsDiv.append(card4);
+  
 
 
   menuDiv.append(cardsDiv);
@@ -193,13 +208,17 @@ function createFindUs(){
   return findUsDiv;
 }
 
-const a = document.getElementById('homepage');
-const myLogo = new Image();
-myLogo.src = Logo;
-a.append(myLogo);
-const cafe = document.createElement('h1');
-cafe.textContent = 'Cafe';
-a.append(cafe);
+function initA(){
+  const a = document.getElementById('homepage');
+  a.textContent = '';
+  const myLogo = new Image();
+  myLogo.src = Logo;
+  a.append(myLogo);
+  const cafe = document.createElement('h1');
+  cafe.textContent = 'Cafe';
+  a.append(cafe);
+}
+
 
 const content = document.querySelector('#content');
 const latestButton = document.querySelector('#latest-button');
@@ -227,5 +246,5 @@ findUsButton.addEventListener('click', () => {
   }
   content.appendChild(createFindUs())
 })
-
+initA();
 content.appendChild(createLatest())
