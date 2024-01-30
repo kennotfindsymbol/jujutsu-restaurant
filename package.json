@@ -1,0 +1,27 @@
+{
+  "name": "jujutsu-restaurant",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennotfindsymbol/jujutsu-restaurant.git"
+  },
+  "author": "kennotfindsymbol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kennotfindsymbol/jujutsu-restaurant/issues"
+  },
+  "homepage": "https://github.com/kennotfindsymbol/jujutsu-restaurant#readme",
+  "devDependencies": {
+    "css-loader": "^6.9.1",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
