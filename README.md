@@ -2,7 +2,11 @@
 
 # Introduction
 
+This is a dynamic one-page website for a Jujutsu Kaisen themed cafe/restaurant (imaginary) implemented with HTML, CSS & Javascript.
 
+### View here: <https://kennotfindsymbol.github.io/jujutsu-restaurant>
+
+This is my project for [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page).
 
 ## Credit
 ### Sources of image:
