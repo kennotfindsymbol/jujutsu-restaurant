@@ -31,10 +31,6 @@ body {
     background-repeat: repeat-y;
 }
 
-#content {
-    
-}
-
 header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
     display: flex;
@@ -129,10 +125,6 @@ nav button:hover{
     font-size: 2rem;
     color: var(--logo-color);
     text-shadow: var(--curse-text-shadow);
-}
-
-.card .food-description {
-
 }
 
 .card .food-price {

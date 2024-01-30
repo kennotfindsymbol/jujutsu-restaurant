@@ -1,13 +1,15 @@
 import './style.css';
-import Icon from './logo.png';
+import Logo from '../src/logo.png';
+import Latest from '../src/latest.jpg';
 import food1 from '../src/menu/finger.jpg';
 import food2 from '../src/menu/spirit.jpg';
 import food3 from '../src/menu/bun.jpg';
 import food4 from '../src/menu/finger.jpg';
+import Findus from '../src/findus.jpg';
 
 
 
-function createLastest(){
+function createLatest(){
   const latestDiv = document.createElement('div');
   latestDiv.classList.add('container')
   latestDiv.classList.add('latest')
@@ -16,15 +18,22 @@ function createLastest(){
   latestDiv.append(h1);
   const cardsDiv = document.createElement('div');
   cardsDiv.classList.add('cards');
-  cardsDiv.innerHTML = 
-  `
-  <div class="card">
-    <img src="../src/latest.jpg" alt="latest">
-  </div>  
-  <div class="card">
-    <div class="intro">The <strong>HOTTEST</strong> (literally) cafe in Shinjuku !!!</div>
-  </div>  
-  `;
+
+  const card1 = document.createElement('div');
+  card1.classList.add('card');
+  const latest = new Image();
+  latest.src = Latest;
+  card1.append(latest)
+  cardsDiv.append(card1);
+
+  const card2 = document.createElement('div');
+  card2.classList.add('card');
+  const intro = document.createElement('div');
+  intro.classList.add('intro')
+  intro.textContent = 'The HOTTEST (literally) cafe in Shinjuku !!!'
+  card2.append(intro);
+  cardsDiv.append(card2);
+
   latestDiv.append(cardsDiv);
   return latestDiv;
 }
@@ -38,26 +47,7 @@ function createMenu(){
   menuDiv.append(h1);
   const cardsDiv = document.createElement('div');
   cardsDiv.classList.add('cards');
-  // cardsDiv.innerHTML = 
-  // `
-  //   <div class="card">
-  //     <div class="img-container"><img src="../src/menu/spirit.jpg" alt=""></div>
-  //     <p class="food-name">Cursed Spirit</p>
-  //     <p class="food-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora culpa esse placeat, magnam illum ducimus rem voluptatum incidunt maxime, sint voluptatem natus. Minima rem delectus voluptas totam optio nemo. Ea?</p>
-  //     <p class="food-price">$5</p>
-  //   </div>
-  //   <div class="card">
-  //     <div class="img-container"><img src="../src/menu/bun.jpg" alt=""></div>
-  //     <p class="food-name">Nanami's bun</p>
-  //     <p class="food-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque modi inventore porro, veritatis quasi quam maiores in? Cumque iure, totam veritatis doloribus atque sed eum nam voluptas ipsum dolores dicta.</p>
-  //     <p class="food-price">$5</p>
-  //   </div>
-  //   <div class="card">
-  //     <div class="img-container"><img src="../src/menu/finger.jpg" alt=""></div>
-  //     <p class="food-name">Sukuna's finger 2</p>
-  //     <p class="food-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas aspernatur et hic aliquid fuga obcaecati laudantium vero consequuntur odio. Doloribus pariatur assumenda inventore maiores iste mollitia iusto, vitae minima expedita?</p>
-  //     <p class="food-price">$15</p>
-  //   </div>`;
+
   const card1 = document.createElement('div');
   card1.classList.add('card');
   const imgContainer1 = document.createElement('div');
@@ -163,20 +153,53 @@ function createFindUs(){
   findUsDiv.append(h1);
   const cardsDiv = document.createElement('div');
   cardsDiv.classList.add('cards');
-  cardsDiv.innerHTML = 
-  `
-  <div class="card">
-    <span class="contact"><i class="bi bi-geo-alt-fill"></i>: 1 234 Nishishinjuku, Shinjuku City, Tokyo</span>
-    <span class="contact"><i class="bi bi-telephone-fill"></i>: +81 1-2345-6789</span>
-  </div>
-  <div class="card">
-    <img src="../src/findus.jpg" alt="findus">
-  </div>
+  // cardsDiv.innerHTML = 
+  // `
+  // <div class="card">
+  //   <span class="contact"><i class="bi bi-geo-alt-fill"></i>: 1 234 Nishishinjuku, Shinjuku City, Tokyo</span>
+  //   <span class="contact"><i class="bi bi-telephone-fill"></i>: +81 1-2345-6789</span>
+  // </div>
+  // <div class="card">
+  //   <img src="../src/findus.jpg" alt="findus">
+  // </div>
   
-  `;
+  // `;
+  const card1 = document.createElement('div');
+  card1.classList.add('card');
+  const span1 = document.createElement('span');
+  const icon1 = document.createElement('i');
+  icon1.classList.add('bi')
+  icon1.classList.add('bi-geo-alt-fill')
+  span1.append(icon1);
+  span1.append(': 1 234 Nishishinjuku, Shinjuku City, Tokyo');
+  card1.append(span1);
+  const span2 = document.createElement('span');
+  const icon2 = document.createElement('i');
+  icon2.classList.add('bi')
+  icon2.classList.add('bi-telephone-fill')
+  span2.append(icon2);
+  span2.append(': +81 1-2345-6789');
+  card1.append(span2);
+  cardsDiv.append(card1);
+
+  const card2 = document.createElement('div');
+  card2.classList.add('card');
+  const findUs = new Image();
+  findUs.src = Findus;
+  card1.append(findUs)
+  cardsDiv.append(card2);
+
   findUsDiv.append(cardsDiv);
   return findUsDiv;
 }
+
+const a = document.getElementById('homepage');
+const myLogo = new Image();
+myLogo.src = Logo;
+a.append(myLogo);
+const cafe = document.createElement('h1');
+cafe.textContent = 'Cafe';
+a.append(cafe);
 
 const content = document.querySelector('#content');
 const latestButton = document.querySelector('#latest-button');
@@ -188,7 +211,7 @@ latestButton.addEventListener('click', () => {
   while(content.firstChild){
     content.removeChild(content.firstChild);
   }
-  content.appendChild(createLastest())
+  content.appendChild(createLatest())
 })
 
 menuButton.addEventListener('click', () => {
@@ -205,4 +228,4 @@ findUsButton.addEventListener('click', () => {
   content.appendChild(createFindUs())
 })
 
-content.appendChild(createMenu())
+content.appendChild(createLatest())
